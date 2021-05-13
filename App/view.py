@@ -83,7 +83,11 @@ def optionThree(cont):
 
 
 def optionFour(cont, initialStation):
-    controller.minimumCostPaths(cont, initialStation)
+    ans = controller.minimumCostPaths(cont, initialStation)
+
+    print("***  Medidas de tiempo y espacio   ***")
+    print("Tiempo [ms]: ", f"{ans[1]:.3f}", "  ||  ",
+             "Memoria [kB]: ", f"{ans[2]:.3f}")
 
 
 def optionFive(cont, destStation):
@@ -95,12 +99,16 @@ def optionFive(cont, destStation):
 
 def optionSix(cont, destStation):
     path = controller.minimumCostPath(cont, destStation)
-    if path is not None:
-        pathlen = stack.size(path)
+    if path[0] is not None:
+        pathlen = stack.size(path[0])
         print('El camino es de longitud: ' + str(pathlen))
-        while (not stack.isEmpty(path)):
-            stop = stack.pop(path)
+        while (not stack.isEmpty(path[0])):
+            stop = stack.pop(path[0])
             print(stop)
+        
+        print("***  Medidas de tiempo y espacio   ***")
+        print("Tiempo [ms]: ", f"{path[1]:.3f}", "  ||  ",
+                 "Memoria [kB]: ", f"{path[2]:.3f}")
     else:
         print('No hay camino')
 
