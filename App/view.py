@@ -44,7 +44,7 @@ operación seleccionada.
 # ___________________________________________________
 
 
-servicefile = 'bus_routes_10000.csv'
+servicefile = 'bus_routes_1000.csv'
 initialStation = None
 
 # ___________________________________________________
